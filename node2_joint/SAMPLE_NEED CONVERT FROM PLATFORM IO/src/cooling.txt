@@ -1,0 +1,27 @@
+
+/*
+Purpose and function of cooling.cpp
+1) get the temperature of the joint and main nodes
+2) vary fan voltage likely [0, 5]V to accomodate for cooling
+--> method to determine steady state cooling performance? Can we create a trasnfer fucntion based on the ventilation and the wattage expected?
+--> can determine rough running, stall motor power in lab and add this in. Know how large the ventiation holes are
+--> any accomodation for generated noise?
+
+*/
+
+#define temp_pin GPIO_NUM_XX //where XX is the number of the temperature sensor pin
+#define fan_pin GPIO_NUM_XX //where xx is the number of the fan control output pin
+
+float scale(int input_value, int min_val, int max_val) {
+    int range = max_val - min_val;
+    float scalar = (input_value - min_val) / range;
+    return scalar;
+}
+
+
+int request_fan_value() {
+    //get temp sensor value
+    //scale output value of the fan to the 
+
+
+}

@@ -1,0 +1,13 @@
+{
+    "idf.portWin": "COM4",
+    "idf.adapterTargetName": "esp32",
+    "files.associations": {
+        "chrono": "cpp",
+        "cstdlib": "cpp"
+    },
+    "idf.openOcdConfigs": [
+        "board/esp32-wrover-kit-3.3v.cfg"
+    ],
+    "idf.port": "/dev/ttyUSB0",
+    "idf.flashType": "UART"
+}
