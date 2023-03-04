@@ -5,15 +5,15 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "/home/karl/esp/esp-idf/components/bootloader/subproject"
-  "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader"
-  "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix"
-  "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/tmp"
-  "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp"
-  "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src"
-  "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader"
+  "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix"
+  "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/tmp"
+  "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src"
+  "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()

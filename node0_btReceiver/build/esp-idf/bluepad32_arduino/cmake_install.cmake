@@ -1,4 +1,4 @@
-# Install script for directory: /media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/components/bluepad32_arduino
+# Install script for directory: /home/karl/Documents/dev/redshift/node0_btReceiver/components/bluepad32_arduino
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1692,7 +1692,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_main_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/karl/.espressif/tools/cmake/3.23.1/bin/cmake --regenerate-during-build -S/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver -B/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build
+  command = /home/karl/.espressif/tools/cmake/3.23.1/bin/cmake --regenerate-during-build -S/home/karl/Documents/dev/redshift/node0_btReceiver -B/home/karl/Documents/dev/redshift/node0_btReceiver/build
   description = Re-running CMake...
   generator = 1
 

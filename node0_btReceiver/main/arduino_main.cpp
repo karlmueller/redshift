@@ -178,12 +178,12 @@ void command_controller()
     if (abs(myData.xStick_left - prev_lx) >= 5 || abs(myData.yStick_left - prev_ly) >= 5 || abs(myData.xStick_right  - prev_rx) >= 5 || abs(myData.yStick_right - prev_ry) >= 5) {
 
         esp_err_t result = esp_now_send(broadcast_address, (uint8_t *) &myData, sizeof(myData));
-        if (result == ESP_OK) {
-        Serial.println("s");
-        }
-        else {
-        Serial.println("e");
-        }
+        //if (result == ESP_OK) {
+        //Serial.println("s");
+        //}
+        //else {
+        //Serial.println("e");
+        //}
 
         //vTaskDelay(10 / portTICK_PERIOD_MS);
     }
@@ -216,7 +216,7 @@ void loop() {
 
             Serial.println(myData.xStick_left);
 
-            command_controller()
+            command_controller();
             
             // You can query the axis and other properties as well. See Gamepad.h
             // For all the available functions.

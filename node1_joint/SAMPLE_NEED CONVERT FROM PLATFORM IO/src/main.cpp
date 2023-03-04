@@ -78,6 +78,9 @@ typedef struct message_object
     int xStick_left = 0;
     int yStick_left = 0;
 
+    int xStick_right = 0;
+    int yStick_right = 0;
+
     int r_trigger = 0;
     int r_bumper = 0;
 
@@ -104,7 +107,7 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len)
     Serial.println(myData.yStick_left);
   }
 
-  c_command_val = myData.xStick_left;
+  c_command_val = myData.xStick_right;
   //q.push(myData.xStick_left);
 
   //cq.push_back()

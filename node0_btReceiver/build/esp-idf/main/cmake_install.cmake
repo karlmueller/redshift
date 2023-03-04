@@ -1,4 +1,4 @@
-# Install script for directory: /media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/main
+# Install script for directory: /home/karl/Documents/dev/redshift/node0_btReceiver/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

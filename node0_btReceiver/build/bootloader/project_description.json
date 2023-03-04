@@ -1,8 +1,8 @@
 {
     "project_name":       "bootloader",
     "project_path":       "/home/karl/esp/esp-idf/components/bootloader/subproject",
-    "build_dir":          "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader",
-    "config_file":        "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/sdkconfig",
+    "build_dir":          "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader",
+    "config_file":        "/home/karl/Documents/dev/redshift/node0_btReceiver/sdkconfig",
     "config_defaults":    "",
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",

@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
+  include("/home/karl/Documents/dev/redshift/node0_btReceiver/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
 
 endif()
 

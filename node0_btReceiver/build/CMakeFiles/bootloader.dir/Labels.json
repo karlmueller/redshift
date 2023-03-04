@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/CMakeFiles/bootloader"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/CMakeFiles/bootloader.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/home/karl/Documents/dev/redshift/node0_btReceiver/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 

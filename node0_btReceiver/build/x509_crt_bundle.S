@@ -1,4 +1,4 @@
-/* * Data converted from /media/karl/Storage/Documents/00_robotArm/uControllerFirmware/series1_controller_jog/node0_btReceiver/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/karl/Documents/dev/redshift/node0_btReceiver/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded
