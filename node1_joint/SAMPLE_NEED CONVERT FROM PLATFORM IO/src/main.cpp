@@ -26,7 +26,9 @@
 #define RST GPIO_NUM_22
 #define SLP GPIO_NUM_16
 #define DIR_PIN GPIO_NUM_0
-#define stick_threshold 90
+#define HALL_PIN GPIO_NUM_5
+
+#define stick_threshold 75
 
 const float MAX_ACC = 4500;
 const float MAX_SPEED = 17500;
@@ -114,6 +116,14 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len)
   //vTaskDelay(150 / portTICK_PERIOD_MS);
 }
 
+void hall_init()
+{
+  gpio_reset_pin(HALL_PIN);
+  gpio_set_direction(HALL_PIN, GPIO_MODE_INPUT);
+
+
+}
+
 void stepper_initialization() {
 
   gpio_reset_pin(STEP_GPIO);
@@ -137,7 +147,7 @@ void stepper_initialization() {
 }
 
 
-int dir_check()
+int dir_check(float input_cmd)
 {
   if (c_command_val < 0)
   {
@@ -152,12 +162,12 @@ int dir_check()
 
 void command_speed()
 {
-  Serial.println("Waking motor");
+  // Serial.println("Waking motor");
   stepper0.enableOutputs(); //begin the motor to resume use
 
   while (abs(c_command_val) > stick_threshold)
   {
-    stepper_direction = dir_check();
+    stepper_direction = dir_check(c_command_val);
     stepper0._direction = stepper_direction; //assign direction to stepper, queried via object memory, not within a step function
     speed_normalized = ((abs(c_command_val) - stick_threshold) / (512.0 - stick_threshold)) * MAX_SPEED;
     
@@ -169,12 +179,46 @@ void command_speed()
     stepper0.setSpeed(speed_normalized);
     stepper0.runSpeed();
     //vTaskDelay(150 / portTICK_PERIOD_MS);
+    //Serial.print("Hall:: ");
+    //Serial.println( digitalRead(HALL_PIN));
   }
   // Disable the motor once inputs are not 
   stepper0.setSpeed(0); //stop the motor
   stepper0.runSpeed(); //run the motor at zero speed
   stepper0.disableOutputs(); //cut motor power after stop to save power, heat
   //Serial.println("Motor stopped due to stick inactivity");
+}
+
+void print_c_pos()
+{
+  Serial.println(stepper0.currentPosition());
+  //vTaskDelay(150/portTICK_PERIOD_MS);
+}
+
+
+void hall_effect_home_stop()
+{
+  stepper0.setSpeed(0); //stop the motor
+  stepper0.runSpeed(); //run the motor at zero speed
+  stepper0.disableOutputs(); 
+  Serial.println("[homing] :: Home position found. Halting motor!!");
+  Serial.println("Releasing hall effect ISR");
+  detachInterrupt(HALL_PIN);
+  print_c_pos();
+
+
+}
+
+void motor_home()
+{
+  
+  attachInterrupt(HALL_PIN, hall_effect_home_stop, CHANGE);
+  stepper0.enableOutputs();
+  stepper0.setSpeed(6000);
+  stepper0.setTargetPos(100000);
+  stepper0.runToPosition();
+
+
 }
 
 
@@ -189,14 +233,14 @@ void motor_control_loop() {
       }
 
       // else do nothing, wait for the next polling period to check for a change in commanded speeds / directions
-
+      //Serial.print("Hall:: ");
+      //Serial.println(digitalRead(HALL_PIN));
     } //TERMINATE if(&myData !=  NULL)
+
 
     //vTaskDelay(150 / portTICK_PERIOD_MS); //polling period for the motor speeds. Should provide for some debounce. Ensure this is nonblocking
     //must use a task delay, to do anything else is frankly stupid (or I am for thinking so???)... wondering if this will cause callback issues if a blocking wait function
 }
-
-
 
 void setup()
 {
@@ -218,6 +262,8 @@ void setup()
   esp_now_register_recv_cb(OnDataRecv);
 
   stepper_initialization();
+  hall_init();
+  motor_home();
 
   // >>>>>>>>>>>>>>>>> MAKE TASK PINNED TO CORE WORK PROPERLY, HANDLE ON THE NON-WIRELESS CORE   <<<<<<<<<<<<<<
   //xTaskCreatePinnedToCore(motor_control_loop(), "main_loop", 10000, 1, 1, xCoreID=2);
